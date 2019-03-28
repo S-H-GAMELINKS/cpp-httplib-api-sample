@@ -27,6 +27,12 @@ int main() {
         res.set_content(content.str(), "text/plain");
     });
 
+    svr.Post("/talks", [&](const httplib::Request& req, httplib::Response& res){
+        talks.emplace_back(std::move(req.body));
+
+        res.set_content("Create Talks!", "text/plain");
+    });
+
     svr.listen("localhost", 3000);
 
     return 0;
