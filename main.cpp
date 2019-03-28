@@ -27,6 +27,7 @@ int main() {
         res.set_content(content.str(), "text/plain");
     });
 
+    svr.listen("localhost", 3000);
 
     return 0;
 }
