@@ -16,6 +16,9 @@ int main() {
         res.set_content("Hi! Welcome to C++ API!", "text/plain");
     });
 
+    svr.Get("/about", [](const httplib::Request& req, httplib::Response& res) {
+        res.set_content("RESTful C++ Web API!", "text/plain");
+    });
 
     svr.Get("/talks", [&](const httplib::Request& req, httplib::Response& res) {
 
