@@ -4,7 +4,8 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ main.cpp cpp-httplib/httplib.h -DWEBVIEW_WINAPI=1 -lole32 -lcomctl32 -lws2_32 -loleaut32 -luuid -mwindows -DGTEST_USE_OWN_TR1_TUPLE -I.. -I. -Wall -Wextra"
+            "command": "cmd",
+            "args": ["/C", "docker rmi cpp-api && docker build -t cpp-api . && docker run --rm --name cpp-api -i -p 3000:3000 -t cpp-api"],
         }
     ]
 }
