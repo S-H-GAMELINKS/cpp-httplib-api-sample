@@ -18,6 +18,7 @@ int main() {
     });
 
     svr.Get("/about", [](const httplib::Request& req, httplib::Response& res) {
+        std::cout << "GET: routes '/about'" << std::endl;
         res.set_content("RESTful C++ Web API!", "text/plain");
     });
 
