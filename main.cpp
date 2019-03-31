@@ -33,7 +33,7 @@ int main() {
         res.set_content("Create Talks!", "text/plain");
     });
 
-    svr.listen("localhost", 3000);
+    svr.listen("0.0.0.0", 3000);
 
     return 0;
 }

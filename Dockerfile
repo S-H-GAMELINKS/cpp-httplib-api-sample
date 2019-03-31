@@ -1,6 +1,6 @@
-FROM ubuntu
-
-ENV HOME=/home/app
-
-RUN apt update -qq
-RUN apt install -y git build-essential cmake gcc libssl-dev
+FROM gcc:latest
+COPY . /cpp-dev
+WORKDIR /cpp-dev
+EXPOSE 3000
+RUN g++ main.cpp httplib.h -std=c++17 -pthread 
+CMD ["./a.out"]
