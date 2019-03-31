@@ -27,7 +27,7 @@ int main() {
         std::ostringstream content;
 
         for(auto&& t : talks)
-            content << "{ " << t.c_str() << " }," ;
+            content << "{ \"" << t.c_str() << "\" }," ;
         
         res.set_content(content.str(), "text/plain");
     });
