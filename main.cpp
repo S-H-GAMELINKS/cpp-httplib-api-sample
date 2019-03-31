@@ -13,6 +13,7 @@ int main() {
     httplib::Server svr;
 
     svr.Get("/", [](const httplib::Request& req, httplib::Response& res) {
+        std::cout << "GET: routes '/'" << std::endl;
         res.set_content("Hi! Welcome to C++ API!", "text/plain");
     });
 
